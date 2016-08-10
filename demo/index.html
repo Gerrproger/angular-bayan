@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>angular-bayan</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="demo.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="../dist/angular-bayan.min.js"></script>
+
+    <meta name="description"
+          content="Bayan is an easily customizable accordion-like module for Angular!">
+    <meta name="keywords" content="bayan, angular-bayan, accordion, module, plugin, Angular, JS">
+    <meta property="og:title" content="angular-bayan">
+    <meta property="og:description"
+          content="Bayan is an easily customizable accordion-like module for Angular!">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="http://gerrproger.github.io/angular-bayan/">
+</head>
+<body>
+<div class="wrapper">
+    <header class="content">
+        <h1>
+            <span>angular-</span>
+            bayan
+        </h1>
+    </header>
+
+    <main>
+        <section>
+            <div class="content center">
+                <p>Need to show only first line of some data?</p>
+                <p>Then you need to show other content?</p>
+                <p>Can't handle lots of "accordions"?</p>
+                <p class="attention">Bayan is what you need!</p>
+            </div>
+        </section>
+        <section>
+            <div class="demo content" ng-app="demo" ng-controller="RandomizeCtrl">
+                <div class="set">
+                    <p>Demo blocks height and number of lines are generated randomly</p>
+                    <button class="button fl-right" ng-click="randomize()">Randomize</button>
+                </div>
+
+                <bayan class="demo-bayan">
+                    <bayan-header class="demo-bayan__header" ng-bind="bayan.open ? 'Collapse' : 'Expand all'"></bayan-header>
+                    <bayan-content bayan-content-offset="10" class="demo-bayan__content">
+
+                        <div ng-repeat="item in demo.items track by $index" ng-style="{'height': item + 'px'}"
+                             class="demo-bayan__item"></div>
+
+                    </bayan-content>
+                </bayan>
+            </div>
+        </section>
+        <section>
+            <div class="content center">
+                <p>Fully & easily customizable - forget your Bootstrap nightmare!</p>
+                <p>You decide where <i>content</i> and <i>header</i> would be located!</p>
+                <p>Accustomed <i>accordion</i> layout is used!</p>
+                <p>Angular > 1.2 supported!</p>
+
+                <a class="button repo" target="_blank" href="https://github.com/gerrproger/angular-bayan">View on Github</a>
+            </div>
+        </section>
+    </main>
+</div>
+
+<footer>
+    <div class="content">
+        <span>&copy; 2016 Bayan</span>
+        <span class="fl-right">Made with <small>❤</small> by Gerrproger</span>
+    </div>
+</footer>
+
+<script>
+    var demo = angular.module('demo', ['angular-bayan']);
+    demo.controller('RandomizeCtrl', ['$scope', function ($scope) {
+        $scope.randomize = randomize;
+        $scope.demo = demo = {};
+        var cols = 5;
+        randomize();
+
+        function randomize() {
+            demo.items = [];
+            var items = rand(2, 4) * cols;
+
+            for (var i = 0; i < items; i++) {
+                demo.items.push(80 + rand(0, 50));
+            }
+
+            $scope.$broadcast('bayan:update');
+        }
+
+        function rand(min, max) {
+            var rand = min - 0.5 + Math.random() * (max - min + 1);
+            return Math.round(rand);
+        }
+    }]);
+</script>
+
+</body>
+</html>

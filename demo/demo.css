@@ -1,0 +1,163 @@
+html, body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    color: rgba(0, 0, 0, 0.87);
+    cursor: default;
+    font-size: 14px;
+    height: 100%;
+}
+
+body {
+    overflow-y: scroll;
+}
+
+.wrapper {
+    min-height: 100%;
+    margin-bottom: -34px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 56px;
+    font-weight: 400;
+    margin: 0;
+}
+
+h1 span {
+    color: rgba(0, 0, 0, 0.47);
+    margin-right: -9px;
+}
+
+.content {
+    width: 600px;
+    margin: 0 auto;
+    padding: 10px 20px;
+}
+
+footer {
+    border-top: 1px solid #ddd;
+    background: rgb(250, 250, 250);
+    font-size: 12px;
+    height: 30px;
+    line-height: 30px;
+}
+
+footer .content {
+    padding: 0 20px;
+}
+
+p {
+    font-size: 16px;
+    margin: 16px 0;
+}
+
+.fl-right {
+    float: right;
+}
+
+.center {
+    text-align: center;
+}
+
+.button {
+    font-family: 'Roboto', sans-serif;
+    border-radius: 4px;
+    font-size: 14px;
+    text-transform: uppercase;
+    border: none;
+    color: #fff;
+    background: rgb(255, 82, 82);
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .26);
+    -webkit-transition: all 0.3s cubic-bezier(.55, 0, .55, .2);
+    -moz-transition: all 0.3s cubic-bezier(.55, 0, .55, .2);
+    -o-transition: all 0.3s cubic-bezier(.55, 0, .55, .2);
+    transition: all 0.3s cubic-bezier(.55, 0, .55, .2);
+    cursor: pointer;
+    height: 36px;
+    line-height: 36px;
+    padding: 0 16px;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.button:hover {
+    background: rgb(213, 0, 0);
+}
+
+.attention {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.set {
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.set p {
+    margin: 0;
+    line-height: 38px;
+    float: left;
+}
+
+.repo {
+    font-size: 18px;
+    height: 56px;
+    line-height: 56px;
+    padding: 0 40px;
+    background: #607D8B;
+    margin: 6px 0 100px;
+}
+
+.repo:hover {
+    background: #455A64;
+}
+
+.demo-bayan {
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 2px 1px -1px rgba(0, 0, 0, .12);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.demo-bayan__header {
+    display: block;
+    background: rgb(16, 108, 200);
+    color: rgba(255, 255, 255, 0.9);
+    padding: 16px;
+    text-decoration: none;
+    font-size: 20px;
+    text-transform: capitalize;
+    -webkit-transition: all 0.3s cubic-bezier(.55, 0, .55, .2);
+    -moz-transition: all 0.3s cubic-bezier(.55, 0, .55, .2);
+    -o-transition: all 0.3s cubic-bezier(.55, 0, .55, .2);
+    transition: all 0.3s cubic-bezier(.55, 0, .55, .2);
+    cursor: pointer;
+}
+
+.demo-bayan__header:hover {
+    background: rgb(1, 89, 162);
+    color: #fff;
+}
+
+.demo-bayan__content {
+    overflow: hidden;
+    -webkit-transition: max-height 0.5s;
+    -moz-transition: max-height 0.5s;
+    -o-transition: max-height 0.5s;
+    transition: max-height 0.5s;
+    padding: 10px;
+}
+
+.demo-bayan__item {
+    margin: 8px;
+    display: inline-block;
+    width: 100px;
+    height: 50px;
+    background: #fcddde;
+    vertical-align: top;
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .12);
+    border-radius: 2px;
+}
+
