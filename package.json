@@ -1,6 +1,6 @@
 {
   "name": "angular-bayan",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Easily customizable accordion-like module",
   "main": "src/angular-bayan.js",
   "repository": {
@@ -18,5 +18,11 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/gerrproger/angular-bayan/issues"
+  },
+  "dependencies": {
+    "angular": "~1.2"
+  },
+  "devDependencies": {
+    "angular": "~1.2"
   }
 }

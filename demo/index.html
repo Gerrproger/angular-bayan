@@ -3,13 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>angular-bayan</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="demo.css">
-
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
-    <script src="../dist/angular-bayan.min.js"></script>
 
     <meta name="description"
           content="Bayan is an easily customizable accordion-like module for Angular!">
@@ -32,7 +29,7 @@
     <main>
         <section>
             <div class="content center">
-                <p>Need to show only first line of some data?</p>
+                <p>Need to show only the first line of some data?</p>
                 <p>Then you need to show other content?</p>
                 <p>Can't handle lots of "accordions"?</p>
                 <p class="attention">Bayan is what you need!</p>
@@ -46,7 +43,7 @@
                 </div>
 
                 <bayan class="demo-bayan">
-                    <bayan-header class="demo-bayan__header" ng-bind="bayan.open ? 'Collapse' : 'Expand all'"></bayan-header>
+                    <bayan-header class="demo-bayan__header" ng-bind="bayan.opened ? 'Collapse' : 'Expand all'"></bayan-header>
                     <bayan-content bayan-content-offset="10" class="demo-bayan__content">
 
                         <div ng-repeat="item in demo.items track by $index" ng-style="{'height': item + 'px'}"
@@ -61,7 +58,7 @@
                 <p>Fully & easily customizable - forget your Bootstrap nightmare!</p>
                 <p>You decide where <i>content</i> and <i>header</i> would be located!</p>
                 <p>Accustomed <i>accordion</i> layout is used!</p>
-                <p>Angular > 1.2 supported!</p>
+                <p>Angular 1.2+ supported!</p>
 
                 <a class="button repo" target="_blank" href="https://github.com/gerrproger/angular-bayan">View on Github</a>
             </div>
@@ -76,8 +73,11 @@
     </div>
 </footer>
 
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+<script src="../dist/angular-bayan.min.js"></script>
+
 <script>
-    var demo = angular.module('demo', ['angular-bayan']);
+    var demo = angular.module('demo', ['angularBayan']);
     demo.controller('RandomizeCtrl', ['$scope', function ($scope) {
         $scope.randomize = randomize;
         $scope.demo = demo = {};

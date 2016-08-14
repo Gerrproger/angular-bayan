@@ -1,6 +1,6 @@
 /*!
  * angular-bayan
- * @version  v1.0.0
+ * @version  v1.0.1
  * @author   Gerrproger
  * Website:  http://gerrproger.github.io/angular-bayan
  * Repo:     http://github.com/gerrproger/angular-bayan
@@ -13,7 +13,7 @@
     function factory(angular, Bayan) {
         return angular
 
-            .module('angular-bayan', [])
+            .module('angularBayan', [])
             .directive('bayan', function () {
                 return {
                     restrict: 'EA',
@@ -22,7 +22,7 @@
                     replace: true,
                     template: '<div ng-transclude></div>',
                     controller: function () {
-                        this.open = true;
+                        this.opened = true;
                     },
                     controllerAs: 'bayan'
                 };
@@ -42,7 +42,7 @@
                         var expandedHeight = element[0].scrollHeight;
                         var collapsedHeight;
 
-                        controller.open = !$scope.bayanContentCollapsed;
+                        controller.opened = !$scope.bayanContentCollapsed;
                         controller.update = function () {
                             $timeout(resize);
                         };
@@ -85,7 +85,7 @@
                         function resize() {
                             checkHeight();
 
-                            if (controller.open) {
+                            if (controller.opened) {
                                 element.css({'max-height': expandedHeight + 'px'});
                             } else {
                                 element.css({'max-height': collapsedHeight + parseInt($scope.bayanContentOffset) + 'px'});
@@ -109,7 +109,7 @@
                     require: '^bayan',
                     link: function ($scope, element, attrs, controller) {
                         $scope.toggleOpen = function () {
-                            controller.open = !controller.open;
+                            controller.opened = !controller.opened;
                             controller.update();
                         };
 

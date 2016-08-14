@@ -19,14 +19,18 @@ Only Angular 1.2+
 
 ### Usage
 
-Get angular-bayan and include in your application.
+Get angular-bayan.
+- via npm: `npm install angular-bayan`
+- or via Bower: `bower install angular-bayan`
+
+Include it in your application.
 ```html
 <script src="/angular-bayan/dist/angular-bayan.min.js"></script>
 ```
 
 Add the module `angular-bayan` as a dependency to your app module.
 ```js
-var myapp = angular.module('myapp', ['angular-bayan']);
+var myapp = angular.module('myapp', ['angularBayan']);
 ```
 
 You can now start using the angular-bayan directives.
@@ -42,18 +46,21 @@ You can now start using the angular-bayan directives.
 </bayan>
 ```
 
-Direcives can be referenced as element names or attributes. `bayan-header` should contain the header of an accordion. `bayan-content` should contain elements, it would be collaped.  
+Directives can be referenced as element names or attributes. `bayan-header` should contain the header of an accordion. `bayan-content` should contain elements, it would be collapsed.
   
 Directive `bayan-content` has two settings: `bayan-content-offset` and `bayan-content-collapsed`.  
 Pass to `bayan-content-offset` number (in px) which would be added to the content height in the _collapsed_ state.  
-By default Bayan is not collaped but you can change it by setting `bayan-content-collapsed` to true.
+By default Bayan is not collapsed but you can change it by setting `bayan-content-collapsed` to true.
 ```html
 <bayan-content bayan-content-collapsed="true" bayan-content-offset="10">
   ...
 </bayan-content>
 ```
 
-By default Bayan looks for elements to collapse right inside `bayan-content` block. And in the collapsed state hides all lines inside except the first one. But you can manually specify the parent block in which your elemnts contained. Just add to the parent block `bayan-content-target` attribute.
+By default Bayan looks for elements to collapse right inside `bayan-content` block.
+And in the collapsed state hides all lines inside except the first one.
+But you can manually specify the parent block in which your elements contained.
+Just add to the parent block `bayan-content-target` attribute.
 ```html
 <bayan-content>
   <ul bayan-content-target>
@@ -68,7 +75,7 @@ By default Bayan looks for elements to collapse right inside `bayan-content` blo
 Bayan sets his object in the `scope`. So you can use this to determinate collapsed state or recalculate the height of the content.
 ```html
 <bayan>
-  <bayan-header ng-bind="bayan.open ? 'Collapse' : 'Expand'"></bayan-header>
+  <bayan-header ng-bind="bayan.opened ? 'Collapse' : 'Expand'"></bayan-header>
   <bayan-content>
   ...
   </bayan-content>
@@ -81,9 +88,11 @@ To reinitialize the height of the Bayan content (if elements changed) you can ju
 $scope.$broadcast('bayan:update');
 ```
 
-Bayan's _header_ and _content_ can be placed anywhere inside `bayan` For example `bayan-header` could be inside `bayan content`.  
+Bayan's _header_ and _content_ can be placed anywhere inside `bayan`.
+For example `bayan-header` could be inside `bayan content`.
 
-Bayan use `max-height` to control the height. So you can easily add animation using `transitions`.
+Bayan use `max-height` to control the height.
+So you can easily add animation using `transitions`.
 
 ### License
 

@@ -10,6 +10,7 @@ html, body {
 
 body {
     overflow-y: scroll;
+    min-width: 640px;
 }
 
 .wrapper {
