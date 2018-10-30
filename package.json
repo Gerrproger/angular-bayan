@@ -20,7 +20,7 @@
     "url": "https://github.com/gerrproger/angular-bayan/issues"
   },
   "dependencies": {
-    "angular": "~1.2"
+    "angular": "~1.6.9"
   },
   "devDependencies": {
     "angular": "~1.2"
